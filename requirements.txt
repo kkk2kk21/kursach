@@ -4,6 +4,7 @@ cairocffi==1.7.1
 CairoSVG==2.8.2
 certifi==2025.4.26
 cffi==1.17.1
+charset-normalizer==3.4.2
 click==8.2.0
 colorama==0.4.6
 cssselect2==0.8.0
