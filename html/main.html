@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Управление изображениями</title>
+  </head>
+  <body>
+    <!-- 1) Загрузка -->
+    <h2>1) Загрузить или добавить по URL</h2>
+    <form action="/upload/" enctype="multipart/form-data" method="post">
+      <input type="file" name="files" multiple><br>
+      <input type="text" name="urls" placeholder="или URL, через запятую"><br>
+      <input type="number" name="id_slide" placeholder="id_slide" required><br>
+      <input type="submit" value="Добавить">
+    </form>
+    <hr>
+    <!-- 2) Удаление -->
+    <h2>2) Удалить изображение</h2>
+    <form action="/delete/" method="post">
+      <input type="number" name="slide_image_id" placeholder="slide_image_id" required><br>
+      <input type="submit" value="Удалить">
+    </form>
+    <hr>
+    <!-- 3) Подбор шаблонов -->
+    <h2>3) Подобрать шаблоны</h2>
+    <form action="/pick_templates/" method="get">
+      <input type="number" name="id_presentation" placeholder="id_presentation" required><br>
+      <label>dominant_colors_count:
+        <input type="number" name="dominant_colors_count" value="3" min="1" max="10">
+      </label><br>
+      <label>palette_size:
+        <input type="number" name="palette_size" value="5" min="1" max="20">
+      </label><br>
+      <label>temperature:
+        <input type="number" step="0.1" name="temperature" value="1.0" min="0">
+      </label><br>
+      <input type="submit" value="Подобрать шаблоны">
+    </form>
+  </body>
+</html>
